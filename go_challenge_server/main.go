@@ -12,7 +12,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/urlinfo/1/{url:.*}", safetyCheck)
 	http.Handle("/", r)
-	http.ListenAndServe("127.0.0.1:8000", nil)
+	http.ListenAndServe("0.0.0.0:8000", nil)
 }
 
 func safetyCheck(w http.ResponseWriter, r *http.Request) {
@@ -24,7 +24,7 @@ func safetyCheck(w http.ResponseWriter, r *http.Request) {
 	if query != "" {
 		domain += "?" + query
 	}
-	db, _ := sql.Open("mysql", "go:GO@(localhost:3333)/go_challenge")
+	db, _ := sql.Open("mysql", "go:GO@(localhost:3306)/go")
 	defer db.Close()
 	err := db.QueryRow("SELECT url FROM blocked_urls where url='" + domain + "';").Scan(&url)
 	switch {

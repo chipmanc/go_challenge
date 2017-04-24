@@ -19,7 +19,7 @@ func main() {
 
 func loadDatabase(location string) {
 	var url string
-	db, _ := sql.Open("mysql", "go:GO@(localhost:3333)/go_challenge")
+	db, _ := sql.Open("mysql", "go:GO@(localhost:3306)/go")
 	defer db.Close()
 
 	if strings.HasPrefix(location, "http") {
