@@ -1,18 +1,14 @@
 package main
 
 import (
-	"bufio"
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
 	"net/http"
-	"os"
-	"strings"
 )
 
 func main() {
-	loadDatabase("../go_challenge_load_db/blacklist")
 	r := mux.NewRouter()
 	r.HandleFunc("/urlinfo/1/{url:.*}", safetyCheck)
 	http.Handle("/", r)
