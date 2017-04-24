@@ -11,7 +11,7 @@ go install github.com/chipmanc/go_challenge/go_challenge_load_db
 
 To load a blacklist:
 ~/go/bin/go_challenge_load_db <FILE WITH URLS OR NET LOCATION OF BLACKLIST>
-i.e.  ~/go/bin/go_challenge_load_db https://zeustracker.abuse.ch/blocklist.php?download=compromised
+i.e.  ~/go/bin/go_challenge_load_db "https://zeustracker.abuse.ch/blocklist.php?download=compromised"
 
 To start server:
 ~/go/bin/go_challenge_server
