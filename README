@@ -16,3 +16,4 @@ i.e.  ~/go/bin/go_challenge_load_db "https://zeustracker.abuse.ch/blocklist.php?
 To start server:
 ~/go/bin/go_challenge_server
 
+
